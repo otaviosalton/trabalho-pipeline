@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
-  <head><title>Meu Pipeline</title></head>
-  <body>
-    <h1>Versão 1 do meu sistema!</h1>
-  </body>
-</html>"<h1>Teste a for�ar pelo terminal!</h1>" 
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiente de Desenvolvimento | Dev</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #003366; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; }
+        header { background: rgba(0, 0, 0, 0.2); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .logo { font-size: 1.2rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        .badge { background-color: #3388ff; color: #fff; padding: 0.4rem 0.8rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        main { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; text-align: center; }
+        h1 { font-size: 2.8rem; margin-bottom: 1rem; font-weight: 700; }
+        p { font-size: 1.15rem; line-height: 1.6; color: #f0f0f0; margin-bottom: 2rem; }
+        .card { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); border-radius: 12px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.15); text-align: left; margin-top: 2rem; }
+        .card h3 { margin-bottom: 1rem; font-size: 1.3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.2); padding-bottom: 0.5rem; }
+        .status-list { list-style: none; }
+        .status-list li { margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px; }
+        .dot { height: 10px; width: 10px; background-color: #3388ff; border-radius: 50%; display: inline-block; }
+        footer { text-align: center; padding: 1.5rem; background: rgba(0, 0, 0, 0.2); font-size: 0.9rem; color: #d0d0d0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Trabalho CI/CD</div>
+        <span class="badge">DESENVOLVIMENTO</span>
+    </header>
+    <main>
+        <h1>Ambiente de Desenvolvimento</h1>
+        <p>Esta versão representa o sistema em fase de testes publicado a partir da branch <strong>dev</strong>.</p>
+        <div class="card">
+            <h3>Status do Ambiente</h3>
+            <ul class="status-list">
+                <li><span class="dot"></span> <strong>Branch:</strong> dev</li>
+                <li><span class="dot"></span> <strong>Pipeline:</strong> deploy-dev.yml (Manual)</li>
+                <li><span class="dot"></span> <strong>Hospedagem:</strong> Netlify Development</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Projeto Académico de Pipeline CI/CD com GitHub Actions</p>
+    </footer>
+</body>
+</html>
