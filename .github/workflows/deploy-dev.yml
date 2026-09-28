@@ -1,0 +1,24 @@
+name: Deploy Dev (Desenvolvimento)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout da branch dev
+        uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Deploy na Netlify (Dev)
+        run: netlify deploy --site="${{ secrets.NETLIFY_SITE_ID_DEV }}" --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --dir="." --prod

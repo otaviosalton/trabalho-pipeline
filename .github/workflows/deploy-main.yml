@@ -1,0 +1,24 @@
+name: Deploy Main (Produção)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout da branch main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar Netlify CLI
+        run: npm install -g netlify-cli
+
+      - name: Deploy na Netlify (Main)
+        run: netlify deploy --site="${{ secrets.NETLIFY_SITE_ID_MAIN }}" --auth="${{ secrets.NETLIFY_AUTH_TOKEN }}" --dir="." --prod
